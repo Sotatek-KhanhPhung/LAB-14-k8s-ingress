@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: web-be-image:latest
+          image: pnkhanh211/web-be-image:latest
           resources:
             requests:
               memory: "64Mi"

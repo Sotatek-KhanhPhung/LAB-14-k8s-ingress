@@ -36,7 +36,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: web-fe-image:latest
+          image: pnkhanh211/web-fe-image:latest
           resources:
             requests:
               memory: "64Mi"
