@@ -36,7 +36,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: YOUR_DOCKERHUB_USER/fe:1.0
+          image: web-fe-image:latest
           resources:
             requests:
               memory: "64Mi"
