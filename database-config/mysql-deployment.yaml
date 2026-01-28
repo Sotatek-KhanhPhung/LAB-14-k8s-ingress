@@ -21,10 +21,27 @@ spec:
           valueFrom:
             secretKeyRef:
               name: mysql-secret
-              key: password
+              key: DB_PASSWORD
+        - name: MYSQL_DATABASE
+          valueFrom:
+            configMapKeyRef:
+              name: mysql-config
+              key: DB_NAME
+        - name: MYSQL_USER
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: DB_USER
         ports:
         - containerPort: 3306
           name: mysql
+        resources:
+          requests:
+            cpu: "250m"
+            memory: "256Mi"
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
         volumeMounts:
         - name: mysql-persistent-storage
           mountPath: /var/lib/mysql
