@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: pnkhanh211/web-be-image:latest
+          image: pnkhanh211/web-fe-image:latest
           ports:
             - containerPort: 3000
           resources:
