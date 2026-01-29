@@ -1,11 +1,11 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: app-ingress
+  name: lab14-ingress
 spec:
   ingressClassName: nginx
   rules:
-    - host: app.local
+    - host: lab14.local
       http:
         paths:
           - path: /
