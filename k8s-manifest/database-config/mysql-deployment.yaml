@@ -1,8 +1,10 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: mysql
 spec:
+  serviceName: "mysql"
+  replicas: 1
   selector:
     matchLabels:
       app: mysql
@@ -27,11 +29,6 @@ spec:
             configMapKeyRef:
               name: db-config
               key: DB_NAME
-        # - name: MYSQL_USER
-        #   valueFrom:
-        #     secretKeyRef:
-        #       name: mysql-secret
-        #       key: DB_USER
         ports:
         - containerPort: 3306
           name: mysql
